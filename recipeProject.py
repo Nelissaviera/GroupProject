@@ -2,7 +2,7 @@
 """
 Created on Mon Apr  4 23:28:47 2022
 
-@author: Nelis
+@author: 
 """
 def ingredients_recipe(recipe, quantity):
     if(recipe == 1):
