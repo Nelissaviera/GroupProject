@@ -44,7 +44,7 @@ def ingredients_recipe(recipe):
         print(f'Bread Flour {BreadFlour * quantity}g.')
         print(f'Salt: {Salt * quantity}g.')
         print(f'Water: {Water * quantity}ml.')
-        readFile(0, 8)
+        readFile(0, 11)
 
     elif(recipe == 2):
         quantity = int(input("How many loaves of bread they would like to bake: "))
@@ -65,7 +65,7 @@ def ingredients_recipe(recipe):
         print(f'Salt: {Salt * quantity}g.')
         print(f'Water: {Water * quantity}ml.')
         print()
-        readFile(0, 8)
+        readFile(11, 19)
 
     elif(recipe == 3):
         quantity = int(input("How many loaves of bread they would like to bake: "))
@@ -85,7 +85,7 @@ def ingredients_recipe(recipe):
         print(f'Bread Flour {BreadFlour * quantity}g.')
         print(f'Salt: {Salt * quantity}g.')
         print(f'Water: {Water * quantity}ml.')
-        readFile(8, 17)
+        readFile(19, 28)
 
 
     elif(recipe == 4):
@@ -107,7 +107,7 @@ def ingredients_recipe(recipe):
         print(f'Salt: {Salt * quantity}g.')
         print(f'Water: {Water * quantity}ml.')
         print()
-        readFile(4, 10)
+        readFile(28, 37)
 
     elif(recipe == 5):
         quantity = int(input("How many loaves of bread they would like to bake: "))
@@ -128,7 +128,7 @@ def ingredients_recipe(recipe):
         print(f'Salt: {Salt * quantity}g.')
         print(f'Water: {Water * quantity}ml.')
         print()
-        readFile(17, 25)
+        readFile(38, 46)
 
 
     elif(recipe == 6):
@@ -150,7 +150,7 @@ def ingredients_recipe(recipe):
         print(f'Salt: {Salt * quantity}g.')
         print(f'Water: {Water * quantity}ml.')
         print()
-        readFile(25, 31)
+        readFile(46, 53)
 
     elif(recipe == 7):
         quantity = int(input("How many loaves of bread they would like to bake: "))
@@ -171,15 +171,15 @@ def ingredients_recipe(recipe):
         print(f'Salt: {Salt * quantity}g.')
         print(f'Water: {Water * quantity}ml.')
         print()
-        readFile(31, 40)
+        readFile(53, 60)
 
     else:
         print("wrong option, try again")
-        
+
 # menu - function
 # This is the main menu function, user is given the option to enter '1' to run the recipe program or any other key
 # to exit.
-# if user chooses '1' then the next option is to choose a bread recipe, this option (number) will be then 
+# if user chooses '1' then the next option is to choose a bread recipe, this option (number) will be then
 # passed to the recipeOption function
 
 def menu():
@@ -205,4 +205,3 @@ while runMenuAgain.lower() == 'y':
     ingredients_recipe(menu())
     print('Would you like to try another recipe? Y/N')
     runMenuAgain = input()
-
