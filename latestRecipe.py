@@ -15,7 +15,7 @@
 def readFile(a, b):
     with open('Recipes.txt') as f:
         mylist = f.read().splitlines()
-        for n in range(a,b):
+        for n in range(a, b):
             print(mylist[n])
 
 # ingredients_recipe -function
@@ -25,7 +25,7 @@ def readFile(a, b):
 
 def ingredients_recipe(recipe):
 
-    if(recipe == 1):
+    if recipe == 1:
 
         quantity = int(input("How many loaves of bread they would like to bake: "))
         print(f'Bread recipe for Multigrain for {quantity} is:')
@@ -46,7 +46,7 @@ def ingredients_recipe(recipe):
         print(f'Water: {Water * quantity}ml.')
         readFile(0, 11)
 
-    elif(recipe == 2):
+    elif recipe == 2:
         quantity = int(input("How many loaves of bread they would like to bake: "))
         print(f' Bread recipe for Baguette for {quantity} is:')
         TotalFlour = 50.00
@@ -67,7 +67,7 @@ def ingredients_recipe(recipe):
         print()
         readFile(11, 19)
 
-    elif(recipe == 3):
+    elif recipe == 3:
         quantity = int(input("How many loaves of bread they would like to bake: "))
         print(f'Bread recipe for Bagel for {quantity} is:')
         TotalFlour = 75.00
@@ -87,8 +87,7 @@ def ingredients_recipe(recipe):
         print(f'Water: {Water * quantity}ml.')
         readFile(19, 28)
 
-
-    elif(recipe == 4):
+    elif recipe == 4:
         quantity = int(input("How many loaves of bread they would like to bake: "))
         print(f'Bread recipe for Banana bread for {quantity} is:')
         TotalFlour = 40.00
@@ -109,7 +108,7 @@ def ingredients_recipe(recipe):
         print()
         readFile(28, 37)
 
-    elif(recipe == 5):
+    elif recipe == 5:
         quantity = int(input("How many loaves of bread they would like to bake: "))
         print(f'Bread recipe for Whole Wheat for {quantity} is:')
         TotalFlour = 75.00
@@ -130,8 +129,7 @@ def ingredients_recipe(recipe):
         print()
         readFile(38, 46)
 
-
-    elif(recipe == 6):
+    elif recipe == 6:
         quantity = int(input("How many loaves of bread they would like to bake: "))
         print(f'Bread recipe for Pita Bread for {quantity} is:')
         TotalFlour = 90.00
@@ -152,7 +150,7 @@ def ingredients_recipe(recipe):
         print()
         readFile(46, 53)
 
-    elif(recipe == 7):
+    elif recipe == 7:
         quantity = int(input("How many loaves of bread they would like to bake: "))
         print(f'Bread recipe for Corn Bread for {quantity} is:')
         TotalFlour = 80.00
@@ -186,7 +184,6 @@ def menu():
     option = int(input("Press 1 to select your favorite bread recipe. \nOr press any key to finish and exit. \nOption: "))
     if(option == 1):
         recipeOption = int(input("Select your favorite bread\n1.Multigrain Bread\n 2.Baguette\n 3.Bagel \n 4.Banana Bread \n 5.Whole Wheat \n 6.Pita Bread \n 7.Corn Bread \n Option:"))
-        #quantity = int(input("How many loaves of bread they would like to bake: "))
         return recipeOption
     else:
         print("Thanks for using our recipe program")
@@ -194,7 +191,7 @@ def menu():
 
 ## here we run the cript ##
 # We call the function ingredients_recipe and menu
-# the ingredientes_recipe function will have as an argument the number returned by the menu function.
+# the ingredients_recipe function will have as an argument the number returned by the menu function.
 
 ingredients_recipe(menu())
 
