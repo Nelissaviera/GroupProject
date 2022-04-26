@@ -1,16 +1,33 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Apr  4 23:28:47 2022
+# Group Project
+# Class: COP147C - Professor: E Salcedo
+# School: Miami Dade College
+# Authors: Nelissa Viera / Michelle Ruiz / Henry Fandino
+# Last Correction: April 25th - 2022
 
-@author: Nelissa Viera/ Michelle Ruiz / Henry F 
-"""
 
-#Funcions
+# FUNCTIONS
 
-#Function to display the recipe selected
+# readFile - function
+# The readFile function reads the respective lines from the Recipe.txt file
+# The Recipe.txt file most be located in the same directory as this file.
+# This functions takes 2 integers, these are the lines to be pulled from the Recipe.txt and to be printed out.
+
+def readFile(a, b):
+    with open('Recipes.txt') as f:
+        mylist = f.read().splitlines()
+        for n in range(a, b):
+            print(mylist[n])
+ 
+# ingredients_recipe -function
+# This function takes one argument, this is an integer and it indicates the bread recipe chosen by the user
+# if the user chose 3, for example, then this function will print out the respective ingredient list and instructions
+# for that specific bread recipe.
+            
 def ingredients_recipe(recipe, quantity):
     
     if(recipe == 1):
+        print()
         print(f'Bread recipe for Multigrain for {quantity} is:')
         TotalFlour = 100.00
         RedWheat = 120.00
@@ -27,11 +44,12 @@ def ingredients_recipe(recipe, quantity):
         print(f'Bread Flour {BreadFlour * quantity}g.')
         print(f'Salt: {Salt * quantity}g.')
         print(f'Water: {Water * quantity}ml.')
-        fileProcedure = open("Recipes.txt", "r")
-        print(fileProcedure.readlines()[0:7])
+        print()
+        readFile(0, 11)
 
     elif(recipe == 2):
-        print(f' Bread recipe for Baguette for {quantity} is:')
+        print()
+        print(f'Bread recipe for Baguette for {quantity} is:')
         TotalFlour = 50.00
         RedWheat = 125.00
         WhiteWheat = 25.00
@@ -48,11 +66,10 @@ def ingredients_recipe(recipe, quantity):
         print(f'Salt: {Salt * quantity}g.')
         print(f'Water: {Water * quantity}ml.')
         print()
-        fileProcedure2 = open("Recipes.txt", "r")
-
-        print(fileProcedure2.readlines()[0:7])
+        readFile(11, 19)
         
     elif(recipe == 3):
+        print()
         print(f'Bread recipe for Bagel for {quantity} is:')
         TotalFlour = 75.00
         RedWheat = 80.00
@@ -69,12 +86,11 @@ def ingredients_recipe(recipe, quantity):
         print(f'Bread Flour {BreadFlour * quantity}g.')
         print(f'Salt: {Salt * quantity}g.')
         print(f'Water: {Water * quantity}ml.')
-        fileProcedure3 = open("Recipes.txt", "r")
         print()
-        print(fileProcedure3.readlines()[8:16])
+        readFile(19, 28)
          
-                
     elif(recipe == 4):
+        print()
         print(f'Bread recipe for Banana bread for {quantity} is:')
         TotalFlour = 40.00
         RedWheat = 125.00
@@ -92,17 +108,10 @@ def ingredients_recipe(recipe, quantity):
         print(f'Salt: {Salt * quantity}g.')
         print(f'Water: {Water * quantity}ml.')
         print()
-        #Example to get doc lines
-        #fileProcedure = open("Recipes.txt", "r")
-        #i =0
-        #for line in fileProcedure:
-            
-            #if(i <=7):
-                #print(line)
-                #i+=1
-        #fileProcedure.close()
+        readFile(28, 37)
         
     elif(recipe == 5):
+        print()
         print(f'Bread recipe for Whole Wheat for {quantity} is:')
         TotalFlour = 75.00
         RedWheat = 111.00
@@ -120,11 +129,11 @@ def ingredients_recipe(recipe, quantity):
         print(f'Salt: {Salt * quantity}g.')
         print(f'Water: {Water * quantity}ml.')
         print()
-        fileProcedure4 = open("Recipes.txt", "r")
-        print(fileProcedure4.readlines()[17:24])
+        readFile(38, 46)
 
         
     elif(recipe == 6):
+        print()
         print(f'Bread recipe for Pita Bread for {quantity} is:')
         TotalFlour = 90.00
         RedWheat = 125.00
@@ -142,10 +151,10 @@ def ingredients_recipe(recipe, quantity):
         print(f'Salt: {Salt * quantity}g.')
         print(f'Water: {Water * quantity}ml.')
         print()
-        fileProcedure = open("Recipes.txt", "r")
-        print(fileProcedure.readlines()[25:31])
+        readFile(46, 53)
 
     else:
+        print()
         print(f'Bread recipe for Corn Bread for {quantity} is:')
         TotalFlour = 80.00
         RedWheat = 120.00
@@ -162,9 +171,15 @@ def ingredients_recipe(recipe, quantity):
         print(f'Bread Flour {BreadFlour * quantity}g.')
         print(f'Salt: {Salt * quantity}g.')
         print(f'Water: {Water * quantity}ml.')
+        print()
+        readFile(53, 60)
 
-        
- #Function to display the main menu   
+# mainMenu - function
+# This is the main menu function, user is given the option to enter '1' to run the recipe program or any other key
+# to exit.
+# if user chooses '1' then the next option is to choose a bread recipe, this option (number) will be then
+# passed to the recipeOption function
+ 
 def mainMenu():
     recipeOption = input("Select your favorite bread\n 1.Multigrain Bread\n 2.Baguette\n 3.Bagel \n 4.Banana Bread \n 5.Whole Wheat \n 6.Pita Bread \n 7.Corn Bread \n 8.Exit\nOption: ")
                
@@ -193,8 +208,10 @@ def mainMenu():
         print("\033[31m The values entered must be numbers \033[0m")
         SystemExit()
        
-
-print("  **** Recipe Program ****")
+# Here we call the function ingredients_recipe and mainMenu
+# the ingredients_recipe function will have as an argument the number returned by the menu function
+# and in some cases the number of loaves.
+print("**** Recipe Program ****")
 
 option = 'y'
 close_option = 0
@@ -210,11 +227,13 @@ while option.lower() =='y' and close_option == 0:
             close_option = option
             print("Thanks for use our recipe program")
             SystemExit()
+            
         #Display error message when the option is not in the menu
         elif(menuRecipe != 1 or menuRecipe != 2 or menuRecipe != 3 or menuRecipe != 4 or menuRecipe != 5 or menuRecipe != 6 or menuRecipe != 7 or menuRecipe != 8):
             print("\033[31m Wrong choice. \033[0m")
 
      
 if(option.lower() != 'y' or close_option== 8):
+    print()
     print("Thanks for use our recipe program")
     SystemExit()
